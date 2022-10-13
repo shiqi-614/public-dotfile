@@ -1,0 +1,73 @@
+set relativenumber
+
+set clipboard+=unnamed
+
+let mapleader=";"  
+
+nmap K gt  
+nmap J gT  
+nmap H <Action>(Back)
+nmap L <Action>(Forward)
+nmap T <Action>(Switcher)
+nmap <leader>v <Action>(VimVisualToggleBlockMode)
+
+nmap <leader>vb <Action>(ViewBreakpoints)
+nmap <leader>tb <Action>(ToggleLineBreakpoint)
+
+nmap <leader>fs <Action>(FileStructurePopup)
+
+nmap <leader>oi <Action>(OptimizeImports)
+
+nmap <leader>st <Action>(Stop)
+nmap <leader>sh <Action>(SplitHorizontally)
+nmap <leader>sv <Action>(SplitVertically)
+nmap <leader>su <Action>(ShowUsages)
+nmap <leader>ss <Action>(ShowSettings)
+
+
+nmap <leader>ga <Action>(GotoAction)
+nmap <leader>gc <Action>(GotoClass)
+nmap <leader>gd <Action>(GotoDeclaration)
+nmap <leader>gi <Action>(GotoImplementation)
+nmap <leader>gsm <Action>(GotoSuperMethod)
+nmap <leader>gt <Action>(GotoTest)
+nmap <leader>gm <Action>(GotoSymbol)
+nmap <leader>gf <Action>(GotoFile)
+nmap <leader>gh <Action>(RecentFiles)
+nmap <leader>gb <Action>(Switcher)
+
+nmap <leader>rr <Action>(Run)
+nmap <leader>rc <Action>(RunClass)
+nmap <leader>rf <Action>(RefactoringMenu)
+vmap <leader>rf <Action>(RefactoringMenu)
+nmap <leader>rd <Action>(Debug)
+
+
+nmap <leader>so <Action>(StepOver)
+nmap <leader>sn <Action>(<F9)
+
+nmap <leader>/ :action CommentByLineComment<CR>
+vmap <leader>/ :action CommentByLineComment<CR>
+vmap <leader>y "*y
+" 设置快捷键将系统剪贴板内容粘贴至 vim
+nmap <leader>p "+p
+" 定义快捷键关闭当前分割窗口
+"
+set ideajoin
+
+set easymotion
+let g:EasyMotion_override_acejump = 0
+let g:EasyMotion_re_anywhere
+
+" map <leader>w :action AceAction<CR>
+" map <leader>al :action AceLineAction<CR>
+
+map <Leader> <Plug>(easymotion-prefix)
+
+nmap <leader>d <C-d>
+nmap <leader>u <C-u>
+
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+
