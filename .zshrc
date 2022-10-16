@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jinsongc/.oh-my-zsh"
+export ZSH="/root/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -136,4 +136,7 @@ autoload -Uz compinit && compinit -i
 
 # export AWS_DEFAULT_REGION=us-east-1
 export AWS_DEFAULT_REGION=us-west-2
-source ~/LambdaDevOSX/rcfiles/lambda.sh
+
+export LANG=zh_CN.UTF-8
+export LC_ALL=zh_CN.UTF-8
+export LANGUAGE=zh_CN.UTF-8

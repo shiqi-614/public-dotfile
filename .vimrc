@@ -4,6 +4,7 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
+Plug 'wincent/vim-clipper'
 Plug 'vim-scripts/a.vim'
 Plug 'tomasr/molokai'
 Plug 'kshenoy/vim-signature'
@@ -31,14 +32,14 @@ Plug 'luochen1990/rainbow'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/mathjax-support-for-mkdp'
-Plug 'iamcco/markdown-preview.vim'
+" Plug 'iamcco/markdown-preview.vim'
 Plug 'dyng/ctrlsf.vim'
 "Plug 'Valloric/YouCompleteMe',{'do':'python3 install.py'}
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
 Plug 'liuchengxu/vista.vim'
 " Plug 'dense-analysis/ale'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'ton/vim-bufsurf'
 
 call plug#end()
@@ -53,7 +54,7 @@ set encoding=utf-8
 let g:solarized_termcolors=256
 set background=dark
 " set background=dark
-colorscheme molokai
+" colorscheme molokai
 
 " 开启实时搜索功能
 set incsearch
@@ -145,9 +146,10 @@ set sessionoptions="blank,buffers,globals,localoptions,tabpages,sesdir,folds,hel
 let mapleader=";"
 
 " 设置快捷键将选中文本块复制至系统剪贴板
-vnoremap <Leader>y "*y
+"vnoremap <Leader>y "*y
 " 设置快捷键将系统剪贴板内容粘贴至 vim
-nmap <leader>p "*p
+"nmap <leader>p "*p
+nnoremap <leader>y :call system('nc -q 0 host.docker.internal 8377', @0)<CR>
 
 " nnoremap <leader>y :call system('nc localhost 8377', @0)<CR>
 
@@ -512,3 +514,7 @@ map <Leader>/ <Plug>NERDCommenterToggle
 "
 " Ali: to indent json files on save
 autocmd FileType json autocmd BufWritePre <buffer> %!python -m json.tool
+
+let g:ClipperAddress='host.docker.internal'
+nnoremap <leader>y yy<Plug>(ClipperClip)
+
