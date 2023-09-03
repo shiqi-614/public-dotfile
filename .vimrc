@@ -361,8 +361,8 @@ endif
 let g:Lf_GtagsAutoGenerate = 1
 let g:Lf_Gtagslabel = 'native-pygments'
 "noremap <leader>fs :Leaderf gtags --current-buffer<CR>
-noremap <leader>gd :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump --match-path", expand("<cword>"))<CR><CR>
-noremap <leader>su :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump --match-path", expand("<cword>"))<CR><CR>
+noremap <leader>su :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump --match-path", expand("<cword>"))<CR><CR>
+noremap <leader>gd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump --match-path", expand("<cword>"))<CR><CR>
 "noremap <leader>fs :<C-U><C-R>=printf("Leaderf! gtags -s %s --auto-jump --match-path", expand("<cword>"))<CR><CR>
 noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
 noremap <leader>fn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
@@ -517,4 +517,5 @@ autocmd FileType json autocmd BufWritePre <buffer> %!python -m json.tool
 
 let g:ClipperAddress='host.docker.internal'
 nnoremap <leader>y yy<Plug>(ClipperClip)
+set mounse=a
 
